@@ -21,8 +21,8 @@ export const Todos:React.FC<Props> = ({todos , handleRemove , onToggleClick}) =>
   return (
     <ul className="todo-list">
         {todos.map(todo => (
-            <li key={todo.id}>
-                <Todo key={todo.id} id={todo.id} title={todo.title} completed={todo.completed} handleRemove={handleRemove} onToggleClick={onToggleClick}/>
+            <li key={todo.id} className={`${todo.completed? "completed" : ""}`} >
+                <Todo id={todo.id} title={todo.title} completed={todo.completed} handleRemove={handleRemove} onToggleClick={onToggleClick}/>
             </li> 
         ))}
     </ul>
